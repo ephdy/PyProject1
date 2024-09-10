@@ -12,6 +12,13 @@ class student:
         self.name=name
         self.age=age
         self.native_place=native_place
+
+    def __str__(self):
+        return f",name:{self.name},{self.age}"
+
+    def __lt__(self, other):
+        return self.age < other.age
+
     def say_hi(self):
         print(f"hi,i am {self.name}")
 
@@ -19,7 +26,8 @@ class student:
 num=int(input("请输入学生个数:"))
 stu=[]
 for i in range(num):
-    print("当前录入第位{}学生信息，总共需录入{}位学生信息".format(i+1,num))
+    print(f"当前录入第位{i+1}学生信息，总共需录入{num}位学生信息")
+    # print("当前录入第位{}学生信息，总共需录入{}位学生信息".format(i + 1, num))
     name=input("请输入学生姓名:")
     age = input("请输入学生年龄:")
     place = input("请输入学生地址:")
